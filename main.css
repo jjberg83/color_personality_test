@@ -1,0 +1,17 @@
+#canvas {
+  border: 5px solid grey;
+  margin: 25px auto 15px auto;
+}
+
+#submit {
+  background-color: green;
+  color: white;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+h1 {
+  margin-bottom: 10px;
+  font-size: 1.5em;
+  font-weight: bold;
+}
