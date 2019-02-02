@@ -5,7 +5,6 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Color Personality Test</title>
     <link href="main.css" rel="stylesheet" type="text/css" media="all">
-    <script src="main.js"></script>
   </head>
   <body onload="draw();">
 
@@ -22,9 +21,46 @@
       A picture of where your personality type fits in.
     </canvas>
 
+    <button> Click me </button>
+
     <p id="personality_characteristics">
       Canvas bør komme over denne teksten.
     </p>
+
+    <script>
+
+    function draw() {
+      let canvas = document.getElementById('canvas');
+      if (canvas.getContext) {
+        let ctx = canvas.getContext('2d');
+
+        // The 4 colored squares
+        ctx.fillStyle = 'rgb(204, 51, 0)';
+        ctx.fillRect(0, 0, 150, 150);
+        ctx.fillStyle  = 'rgb(51, 153, 51)';
+        ctx.fillRect(0, 150, 150, 150);
+        ctx.fillStyle = 'rgb(255, 255, 0)';
+        ctx.fillRect(150, 0, 150, 150);
+        ctx.fillStyle = 'rgb(51, 102, 204)';
+        ctx.fillRect(150, 150, 150, 150);
+
+        //The circle indicating your color personality
+        ctx.beginPath();
+        ctx.arc(150, 150, 23, 0, Math.PI * 2, true);
+        ctx.fillStyle ='rgb(0, 0, 0)';
+        ctx.fill();
+      }
+    }
+
+      let btn = document.querySelector('button');
+      let para = document.querySelector('p');
+
+      btn.onclick = function() {
+        para.textContent = 'Joda, sånn går det';
+      };
+
+
+    </script>
 
   </body>
 </html>
