@@ -1,35 +1,44 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-   "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta charset="utf-8">
     <title>Color Personality Test</title>
     <link href="main.css" rel="stylesheet" type="text/css" media="all">
   </head>
-  <body onload="draw();">
+  <body>
 
     <form action="">
     <h1>A friend invites you to a party. You...</h1></br >
-    <input type="radio" name="color" value="red">...bluntly tell your friend you have other priorities. </br >
-    <input type="radio" name="color" value="blue">...tell your friend you are finishing a coding assignment tonight. </br >
-    <input type="radio" name="color" value="yellow">...hug your friend and start discussing the outfit. </br >
-    <input type="radio" name="color" value="green">...thank your friend for inviting you, and tell her you look forward to it. </br >
+    <input id="red" type="radio" name="color" value="red">...bluntly tell your friend you have other priorities. </br >
+    <input id="blue" type="radio" name="color" value="blue">...tell your friend you are finishing a coding assignment tonight. </br >
+    <input id="yellow" type="radio" name="color" value="yellow">...hug your friend and start discussing the outfit. </br >
+    <input id="green" type="radio" name="color" value="green">...thank your friend for inviting you, and tell her you look forward to it. </br >
     </form>
 
     <button> Click me </button>
 
-    <p id="personality_characteristics">
-      Canvas bør komme over denne teksten.
-    </p>
+    <p></p>
 
     <script>
 
       let btn = document.querySelector('button');
       let para = document.querySelector('p');
+      let response = document.querySelector('input');
 
-      btn.onclick = function() {
-        para.textContent = 'Joda, sånn går det';
-      };
+      response.addEventListener('change', myColor);
+
+      function myColor() {
+        let choice = response.value;
+        if (choice === 'red') {
+          para.textContent = 'You´re so red!';
+        } else if (choice === 'blue') {
+          para.textContent = 'You´re so blue!';
+        } else if (choice === 'yellow') {
+          para.textContent = 'You´re so yellow!';
+        } else if (choice === 'green') {
+          para.textContent = 'You´re so green!';
+        }
+      }
 
 
     </script>
