@@ -8,40 +8,45 @@
   <body>
 
     <form action="">
-    <h1>A friend invites you to a party. You...</h1></br >
-    <input id="red" type="radio" name="color" value="red">...bluntly tell your friend you have other priorities. </br >
-    <input id="blue" type="radio" name="color" value="blue">...tell your friend you are finishing a coding assignment tonight. </br >
-    <input id="yellow" type="radio" name="color" value="yellow">...hug your friend and start discussing the outfit. </br >
-    <input id="green" type="radio" name="color" value="green">...thank your friend for inviting you, and tell her you look forward to it. </br >
-    </form>
+  <h1>A friend invites you to a party. You...</h1>
+  <br />
 
-    <button> Click me </button>
+  <input id="red" type="radio" name="color" value="red">...bluntly tell your friend you have other priorities. <br/>
+  <input id="blue" type="radio" name="color" value="blue">...tell your friend you are finishing a coding assignment tonight. <br/>
+  <input id="yellow" type="radio" name="color" value="yellow">...hug your friend and start discussing the outfit. <br/>
+  <input id="green" type="radio" name="color" value="green">...thank your friend for inviting you, and tell her you look forward to it. <br/>
 
-    <p></p>
+</form>
 
-    <script>
+<button> Click me </button>
 
-      let btn = document.querySelector('button');
-      let para = document.querySelector('p');
-      let response = document.querySelector('input');
+<p></p>
 
-      response.addEventListener('change', myColor);
+<script>
+  const form = document.querySelector('form');
+  let btn = document.querySelector('button');
+  let para = document.querySelector('p');
+  let response = document.querySelector('input');
 
-      function myColor() {
-        let choice = response.value;
-        if (choice === 'red') {
-          para.textContent = 'You´re so red!';
-        } else if (choice === 'blue') {
-          para.textContent = 'You´re so blue!';
-        } else if (choice === 'yellow') {
-          para.textContent = 'You´re so yellow!';
-        } else if (choice === 'green') {
-          para.textContent = 'You´re so green!';
-        }
-      }
+  //response.addEventListener('change', myColor);
+  btn.addEventListener('click', myColor);
 
-
-    </script>
+  function myColor() {
+    let choice = form.color.value;
+    if (!choice) {
+      return;
+    }
+    if (choice === 'red') {
+      para.textContent = 'You´re so red!';
+    } else if (choice === 'blue') {
+      para.textContent = 'You´re so blue!';
+    } else if (choice === 'yellow') {
+      para.textContent = 'You´re so yellow!';
+    } else if (choice === 'green') {
+      para.textContent = 'You´re so green!';
+    }
+  }
+</script>
 
   </body>
 </html>
