@@ -34,7 +34,7 @@
   function myColor() {
     let choice = form.color.value;
     if (!choice) {
-      return;
+      para.textContent = 'Please chose one of the answers above.';
     }
     if (choice === 'red') {
       para.textContent = 'You´re so red!';
