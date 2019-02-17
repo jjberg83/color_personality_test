@@ -5,7 +5,7 @@
     <title>Color Personality Test</title>
     <link href="main.css" rel="stylesheet" type="text/css" media="all">
   </head>
-  <body>
+  <body onload="draw();">
 
     <form action="">
   <h1>A friend invites you to a party. You...</h1>
@@ -20,9 +20,37 @@
 
 <button> Click me </button>
 
+<canvas id="canvas" width="300" height="300">
+  A picture of where your personality type fits in.
+</canvas>
+
 <p></p>
 
 <script>
+
+function draw() {
+  let canvas = document.getElementById('canvas');
+  if (canvas.getContext) {
+  let ctx = canvas.getContext('2d');
+
+  // The 4 colored squares
+  ctx.fillStyle = 'rgb(204, 51, 0)';
+  ctx.fillRect(0, 0, 150, 150);
+  ctx.fillStyle  = 'rgb(51, 153, 51)';
+  ctx.fillRect(0, 150, 150, 150);
+  ctx.fillStyle = 'rgb(255, 255, 0)';
+  ctx.fillRect(150, 0, 150, 150);
+  ctx.fillStyle = 'rgb(51, 102, 204)';
+  ctx.fillRect(150, 150, 150, 150);
+
+  //The circle indicating your color personality
+  ctx.beginPath();
+  ctx.arc(150, 150, 23, 0, Math.PI * 2, true);
+  ctx.fillStyle ='rgb(0, 0, 0)';
+  ctx.fill();
+}
+}
+
   const form = document.querySelector('form');
   let btn = document.querySelector('button');
   let para = document.querySelector('p');
