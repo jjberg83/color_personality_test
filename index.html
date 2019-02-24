@@ -7,7 +7,7 @@
   </head>
   <body onload="draw();">
 
-    <form action="">
+  <form action="">
   <h1>A friend invites you to a party. You...</h1>
   <br />
 
@@ -16,64 +16,64 @@
   <input id="yellow" type="radio" name="color" value="yellow">...hug your friend and start discussing the outfit. <br/>
   <input id="green" type="radio" name="color" value="green">...thank your friend for inviting you, and tell her you look forward to it. <br/>
 
-</form>
+  </form>
 
-<button> Click me </button>
+  <button> Click me </button>
 
-<canvas id="canvas" width="300" height="300">
+  <canvas id="canvas" width="300" height="300">
   A picture of where your personality type fits in.
-</canvas>
+  </canvas>
 
-<p></p>
+  <p></p>
 
-<script>
+  <script>
 
-function draw() {
-  let canvas = document.getElementById('canvas');
-  if (canvas.getContext) {
-  let ctx = canvas.getContext('2d');
+  function draw() {
+    let canvas = document.getElementById('canvas');
+    if (canvas.getContext) {
+      let ctx = canvas.getContext('2d');
 
-  // The 4 colored squares
-  ctx.fillStyle = 'rgb(204, 51, 0)';
-  ctx.fillRect(0, 0, 150, 150);
-  ctx.fillStyle  = 'rgb(51, 153, 51)';
-  ctx.fillRect(0, 150, 150, 150);
-  ctx.fillStyle = 'rgb(255, 255, 0)';
-  ctx.fillRect(150, 0, 150, 150);
-  ctx.fillStyle = 'rgb(51, 102, 204)';
-  ctx.fillRect(150, 150, 150, 150);
+    // The 4 colored squares
+    ctx.fillStyle = 'rgb(204, 51, 0)';
+    ctx.fillRect(0, 0, 150, 150);
+    ctx.fillStyle  = 'rgb(51, 153, 51)';
+    ctx.fillRect(0, 150, 150, 150);
+    ctx.fillStyle = 'rgb(255, 255, 0)';
+    ctx.fillRect(150, 0, 150, 150);
+    ctx.fillStyle = 'rgb(51, 102, 204)';
+    ctx.fillRect(150, 150, 150, 150);
 
-  //The circle indicating your color personality
-  ctx.beginPath();
-  ctx.arc(150, 150, 23, 0, Math.PI * 2, true);
-  ctx.fillStyle ='rgb(0, 0, 0)';
-  ctx.fill();
-}
-}
-
-  const form = document.querySelector('form');
-  let btn = document.querySelector('button');
-  let para = document.querySelector('p');
-
-  //response.addEventListener('change', myColor);
-  btn.addEventListener('click', myColor);
-
-  function myColor() {
-    let choice = form.color.value;
-    if (!choice) {
-      para.textContent = 'Please chose one of the answers above.';
-    }
-    if (choice === 'red') {
-      para.textContent = 'You´re so red!';
-    } else if (choice === 'blue') {
-      para.textContent = 'You´re so blue!';
-    } else if (choice === 'yellow') {
-      para.textContent = 'You´re so yellow!';
-    } else if (choice === 'green') {
-      para.textContent = 'You´re so green!';
-    }
+    //The circle indicating your color personality
+    ctx.beginPath();
+    ctx.arc(150, 150, 23, 0, Math.PI * 2, true);
+    ctx.fillStyle ='rgb(0, 0, 0)';
+    ctx.fill();
   }
-</script>
+  }
 
-  </body>
+    const form = document.querySelector('form');
+    let btn = document.querySelector('button');
+    let para = document.querySelector('p');
+
+    //response.addEventListener('change', myColor);
+    btn.addEventListener('click', myColor);
+
+    function myColor() {
+      let choice = form.color.value;
+      if (!choice) {
+        para.textContent = 'Please chose one of the answers above.';
+      }
+      if (choice === 'red') {
+        para.textContent = 'You´re so red!';
+      } else if (choice === 'blue') {
+        para.textContent = 'You´re so blue!';
+      } else if (choice === 'yellow') {
+        para.textContent = 'You´re so yellow!';
+      } else if (choice === 'green') {
+        para.textContent = 'You´re so green!';
+      }
+    }
+  </script>
+
+</body>
 </html>
